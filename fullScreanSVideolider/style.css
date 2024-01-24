@@ -1,0 +1,106 @@
+*{
+  margin: 0;padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: sans-serif;
+}
+.contianer{
+  position: relative;
+}
+.contianer .slidecontianer slid{
+min-height: 100vh;
+position: relative;
+overflow: hidden;
+z-index: -1;
+}
+.contianer .slidecontianer .slid video{
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  width: 100%;height: 100%;
+  object-fit: cover;
+  animation: fadeIn .4s linear;
+}
+@keyframes fadeIn{
+  0%{
+    transform: scale(1.5);
+  }
+}
+
+.contianer .slidecontianer .slid .content{
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow:column;
+  background: rgba(0, 0, 0 ,0.7);
+  text-align: center;
+}
+.contianer .slidecontianer .slid .content h3{
+  font-size: 15px;
+  color: #fff;
+  animation: animate .4s linear .6s backwards;
+}
+.contianer .slidecontianer .slid .content p{
+  font-size: 15px;
+  color: #fff;
+  padding: 5px 0;
+  font-weight: lighter;
+max-width: 700px;
+animation: animate .4s linear .4s backwards;
+}
+.contianer .slidecontianer .slid .content .btn{
+  display: inline-block;
+  margin-top: 5px;
+  padding: 15px 30px;
+  background: #fff;
+  font-size: 17px;
+  color: #000;
+  transition: .2s linear;
+  font-weight: bold;
+  animation: animate .4s linear .1s backwards;
+  border-radius: 20px;
+}
+.contianer .slidecontianer .slid .content .btn:hover{
+  letter-spacing: 2px;
+}
+@keyframes animate{
+  0%{
+    opacity: 0;
+    transform: scale(.5) translateY(-50px);
+  }
+}
+
+.contianer .slidecontianer{
+  display: none;
+}
+.contianer .slidecontianer.active{
+  display: block;
+}
+
+.contianer #next, .contianer #prev{
+position: absolute;
+top: 50%;
+transform: translateY(50%);
+z-index: 100;
+background: #fff;
+height: 60px;
+width: 50px;
+line-height: 55px;
+font-size: 20px;
+cursor: pointer;
+color: #000;
+font-weight: bold;
+text-align: center;
+}
+.contianer #next{
+  right: 0;
+}
+.contianer #prev{
+ left: 0;
+}
